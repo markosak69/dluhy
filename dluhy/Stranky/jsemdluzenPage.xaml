@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dluhy.Stranky.jsemdluzenPage"
+             BackgroundColor="{DynamicResource BgColor}">
+
+    <Shell.TitleView>
+        <Grid>
+            <Label Text="Dlužím" Margin="10,10,3,3" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" TextColor="{DynamicResource TextColor}"></Label>
+            <ImageButton Clicked="Button_Clicked"  VerticalOptions="Start" HorizontalOptions="End" WidthRequest="40" Style="{DynamicResource ImgBtSrc}" Aspect="AspectFit"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <Grid >
+        <Grid ZIndex="2" BackgroundColor="{DynamicResource BgColor2}" x:Name="gridMenu" IsVisible="false" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*"  RowSpacing="10"  HeightRequest="400" WidthRequest="300" HorizontalOptions="Center">
+
+            <Entry BackgroundColor="{DynamicResource BgColor}"
+               Grid.Column="0"
+               Grid.Row="0"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Placeholder="Jméno"
+               x:Name="nameEntry"
+               TextColor="{DynamicResource TextColor}"
+               PlaceholderColor="{DynamicResource TextColor}"
+               WidthRequest="150"/>
+
+            <Entry BackgroundColor="{DynamicResource BgColor}"
+               Grid.Column="0"
+               Grid.Row="1"
+               TextColor="{DynamicResource TextColor}"
+               VerticalOptions="Center"
+               x:Name="sumEntry"
+               HorizontalOptions="Center"
+               Placeholder="Částka (Kč)"
+               PlaceholderColor="{DynamicResource TextColor}"
+               WidthRequest="150"/>
+
+            <Entry BackgroundColor="{DynamicResource BgColor}"
+               Grid.Column="0"
+               x:Name="descEntry"
+               TextColor="{DynamicResource TextColor}"
+               Grid.Row="2"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Placeholder="Popis"
+               PlaceholderColor="{DynamicResource TextColor}"
+               WidthRequest="150"/>
+
+            <Button TextColor="{DynamicResource txtColor}" Grid.Column="0" Grid.Row="3" Text="Uložit" Clicked="SaveButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource BtColor}"/>
+            <Button TextColor="{DynamicResource txtColor}" Grid.Column="0" Grid.Row="4" Text="Zrušit" Clicked="CancelButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource BtColor}"/>
+
+        </Grid>
+        <Grid RowDefinitions="70,*,70" ColumnDefinitions="*,10*,*">
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+
+            <ScrollView Grid.Row="1" ZIndex="1" Grid.Column="1">
+
+                <ListView
+                BackgroundColor="{DynamicResource Lisview}"
+                ItemsSource="{Binding ListDluznikemJsemu}"
+                x:Name="CollectionView"
+                HorizontalOptions="Center"
+                RowHeight="50">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout>
+                                    <Label HorizontalOptions="Center" Text="{Binding Name}"></Label>
+                                    <HorizontalStackLayout HorizontalOptions="Center">
+                                        <Label Text="{Binding Sum, StringFormat='dlužím mu {0}'}"></Label>
+                                        <Label Text="{Binding Popis, StringFormat='Kč za: {0}'}"></Label>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                <ViewCell.ContextActions>
+                                    <MenuItem
+                                    Clicked="Delete_Clicked"
+                                    IsDestructive="True"
+                                    Text="Odstranit záznam" />
+                                    <MenuItem
+                                    Clicked="Add_Clicked"
+                                    Text="Přidej" />
+                                    <MenuItem
+                                    Clicked="Remove_Clicked"
+                                    Text="Odeber" />
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage>

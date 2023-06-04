@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="dluhy.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:dluhy"
+    xmlns:Stranky="clr-namespace:dluhy.Stranky"
+    Shell.FlyoutBehavior="Disabled"
+    BackgroundColor="{DynamicResource Shellcolor}"
+    Shell.TabBarBackgroundColor="{DynamicResource Shellcolor}"
+    Shell.TabBarForegroundColor="{DynamicResource TextColor}"
+    Shell.TitleColor="{DynamicResource TextColor}">
+
+    <TabBar>
+
+        <Tab Title="Dluží mně">
+            <ShellContent Style="{DynamicResource shellStyle}" ContentTemplate="{DataTemplate Stranky:dluznimnePage}"
+            Icon="down.png"/>
+        </Tab>
+        <Tab Title="Dlužím">
+            <ShellContent  Style="{DynamicResource shellStyle}" ContentTemplate="{DataTemplate Stranky:jsemdluzenPage}"
+            Icon="up.png"/>
+        </Tab>
+        <Tab Title="Nastavení">
+            <ShellContent  Style="{DynamicResource shellStyle}" ContentTemplate="{DataTemplate Stranky:SettingsPage}"
+             Icon="settings.png"/>
+        </Tab>
+
+    </TabBar>
+</Shell>

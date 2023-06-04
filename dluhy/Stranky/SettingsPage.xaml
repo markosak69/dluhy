@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dluhy.Stranky.SettingsPage"
+             Title="Nastavení" BackgroundColor="{DynamicResource BgColor}">
+    
+    <Shell.TitleView>
+        <Grid>
+            <Label Margin="10,10,3,3" FontSize="25" Text="Nastavení" HorizontalOptions="Start" VerticalOptions="Start" TextColor="{DynamicResource TextColor}"></Label>
+        </Grid>
+    </Shell.TitleView>
+    
+    
+    <VerticalStackLayout>
+        <Button MinimumWidthRequest="100" Clicked="Button_Clicked" Text="Dark" x:Name="btn" Margin="10,10,10,10" BackgroundColor="{DynamicResource TextColor}" TextColor="{DynamicResource BgColor}">
+            
+        </Button>
+        
+        
+    </VerticalStackLayout>
+</ContentPage>
