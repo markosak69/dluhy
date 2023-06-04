@@ -15,15 +15,12 @@ public partial class SettingsPage : ContentPage
         {
             btn.Text = "Dark";
             vymenaBarva(new Dark(), true);
-
-
         }
         else
         {
             btn.Text = "Light";
             vymenaBarva(new Light(), false);
         }
-
     }
 
     private void vymenaBarva(ResourceDictionary theme, bool isdark)
@@ -36,5 +33,4 @@ public partial class SettingsPage : ContentPage
         }
         Preferences.Default.Set("isDark", isdark);
     }
-
 }

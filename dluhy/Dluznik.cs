@@ -34,10 +34,10 @@ namespace dluhy
                 }
                 fileStream.Dispose();
                 reader.Dispose();
-
             }
             catch (Exception)
             {
+
             }
         }
 
@@ -46,7 +46,6 @@ namespace dluhy
             string mainDir = FileSystem.Current.AppDataDirectory;
             string filePath = System.IO.Path.Combine(mainDir, fileName);
             File.Delete(filePath);
-
             using FileStream outputStream = System.IO.File.OpenWrite(filePath);
             using StreamWriter streamWriter = new StreamWriter(outputStream);
             await streamWriter.WriteAsync(string.Empty);
@@ -58,7 +57,6 @@ namespace dluhy
                 {
                     await streamWriter.WriteAsync(itemString);
                     // File saved successfully
-                    
                 }
                 catch (Exception ex)
                 {
@@ -98,8 +96,6 @@ namespace dluhy
             ListDluzniku.Remove(item);
             Dluznik.SaveFile(fileName, ListDluzniku);
         }
-
-
 
         public string Name
         {
@@ -144,6 +140,5 @@ namespace dluhy
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
 }
 

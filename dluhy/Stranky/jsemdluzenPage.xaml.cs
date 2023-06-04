@@ -3,8 +3,7 @@ using System.Collections.ObjectModel;
 namespace dluhy.Stranky;
 
 public partial class jsemdluzenPage : ContentPage
-{
-    
+{   
     ObservableCollection<Dluznik> ListDluznikuJa = new();
 
     public jsemdluzenPage()
@@ -30,7 +29,6 @@ public partial class jsemdluzenPage : ContentPage
         {
             DisplayAlert("Chyba", "Špatná hodnota, zadej èíslo", "OK");
         }
-
     }
 
     private void CancelButton_Clicked(object sender, EventArgs e)
@@ -61,8 +59,6 @@ public partial class jsemdluzenPage : ContentPage
         {
             await DisplayAlert("Chyba", "Špatná hodnota, zadej èíslo", "OK");
         }
-
-
     }
 
     private async void Remove_Clicked(object sender, EventArgs e)
@@ -80,7 +76,6 @@ public partial class jsemdluzenPage : ContentPage
             PopisList.RemoveAll(x => x.Equals(popis));
             ListDluznikuJa[index].Popis = string.Join(",", PopisList);
             Dluznik.SaveFile("jsemdluzenfile.txt", ListDluznikuJa);
-
         }
         else
         {

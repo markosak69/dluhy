@@ -46,7 +46,7 @@
                Placeholder="Popis"
                PlaceholderColor="{DynamicResource TextColor}"
                WidthRequest="150"/>
-
+            
             <Button TextColor="{DynamicResource txtColor}" Grid.Column="0" Grid.Row="3" Text="Uložit" Clicked="SaveButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource BtColor}"/>
             <Button TextColor="{DynamicResource txtColor}" Grid.Column="0" Grid.Row="4" Text="Zrušit" Clicked="CancelButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource BtColor}"/>
 

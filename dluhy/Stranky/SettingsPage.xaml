@@ -9,13 +9,8 @@
             <Label Margin="10,10,3,3" FontSize="25" Text="Nastavení" HorizontalOptions="Start" VerticalOptions="Start" TextColor="{DynamicResource TextColor}"></Label>
         </Grid>
     </Shell.TitleView>
-    
-    
+
     <VerticalStackLayout>
-        <Button MinimumWidthRequest="100" Clicked="Button_Clicked" Text="Dark" x:Name="btn" Margin="10,10,10,10" BackgroundColor="{DynamicResource TextColor}" TextColor="{DynamicResource BgColor}">
-            
-        </Button>
-        
-        
+        <Button MinimumWidthRequest="100" Clicked="Button_Clicked" Text="Dark" x:Name="btn" Margin="10,10,10,10" BackgroundColor="{DynamicResource TextColor}" TextColor="{DynamicResource BgColor}"></Button>
     </VerticalStackLayout>
 </ContentPage>

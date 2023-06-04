@@ -15,8 +15,6 @@ public partial class dluznimnePage : ContentPage
         if(Preferences.Default.Get("isDark", true))
         {
             vymenaBarva(new Dark(), true);
-
-
         }
         else
         {
@@ -39,7 +37,6 @@ public partial class dluznimnePage : ContentPage
         }
         Preferences.Default.Set("theme", isdark);
     }
-
 
     private void Button_Clicked(object sender, EventArgs e)
     {
@@ -108,6 +105,5 @@ public partial class dluznimnePage : ContentPage
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         gridMenu.IsVisible = false;
-
     }
 }

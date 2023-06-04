@@ -51,6 +51,7 @@
             <Button TextColor="{DynamicResource txtColor}" Grid.Column="0" Grid.Row="4" Text="Zrušit" Clicked="CancelButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource BtColor}"/>
 
         </Grid>
+        
         <Grid RowDefinitions="70,*,70" ColumnDefinitions="*,10*,*">
 
             <Grid.GestureRecognizers>
