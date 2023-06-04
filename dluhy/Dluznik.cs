@@ -35,7 +35,6 @@ namespace dluhy
                 fileStream.Dispose();
                 reader.Dispose();
 
-                
             }
             catch (Exception)
             {
